@@ -1,31 +1,43 @@
-#calc-display{
+body{
     display: flex;
-    justify-content: center;
-}
-#calc-main{
-    display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 10%;
 }
 
-#settings{
+#calc-main{
     display: flex;
-    justify-content: end;
+    flex-direction: column;
+    align-items: flex-end;
+    border: 1px solid black;
+    width: 400px;
+}
+#calc-input{
+    display: flex;
+    justify-content: center;
+    border: 1px solid black;
+    width: 400px;
 }
 
 #num-buttons{
     display: flex;
-    width: 300px;
     flex-wrap: wrap;
-}
-.num-btn{
-    width: 100px;
-    height: 70px;
 }
 #operator-buttons{
     display: flex;
     flex-direction: column;
 }
-.op-btn{
+
+button{
     width: 100px;
     height: 70px;
+}
+.num-btn{
+    border: 1px solid darkgray;
+    background-color: black;
+    color: white;
+}
+.num-btn:hover{
+    border: 1px solid darkgray;
+    background-color: gray;
 }
