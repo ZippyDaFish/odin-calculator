@@ -9,16 +9,24 @@ body{
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    border: 1px solid black;
+    border: 5px solid black;
+    margin: 5px 5px;
+    padding: 5px 5px;
     width: 400px;
 }
 #calc-input{
     display: flex;
     justify-content: center;
-    border: 1px solid black;
+    border: 5px solid black;
+    margin: 5px 5px;
+    padding: 5px 5px;
     width: 400px;
 }
 
+#settings{
+    display: flex;
+    justify-content: end;
+}
 #num-buttons{
     display: flex;
     flex-wrap: wrap;
@@ -38,6 +46,15 @@ button{
     color: white;
 }
 .num-btn:hover{
+    border: 1px solid darkgray;
+    background-color: gray;
+}
+.op-btn{
+    border: 1px solid darkgray;
+    background-color: rgb(107, 107, 107);
+    color: white;
+}
+.op-btn:hover{
     border: 1px solid darkgray;
     background-color: gray;
 }
