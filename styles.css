@@ -38,7 +38,9 @@ body{
 
 button{
     width: 100px;
-    height: 70px;
+    height: 80px;
+    font-size: larger;
+    font-weight: bold;
 }
 .num-btn{
     border: 1px solid darkgray;
@@ -49,12 +51,19 @@ button{
     border: 1px solid darkgray;
     background-color: gray;
 }
-.op-btn{
+.op-btn, .settings-btn{
     border: 1px solid darkgray;
     background-color: rgb(107, 107, 107);
     color: white;
 }
-.op-btn:hover{
+.op-btn:hover, .settings-btn:hover{
     border: 1px solid darkgray;
     background-color: gray;
+}
+
+#equals-btn{
+    background-color: rgb(150, 0, 0);
+}
+#equals-btn:hover{
+    background-color: red;
 }
