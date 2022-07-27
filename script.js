@@ -57,5 +57,4 @@ function updateDisplay(){
     else{
         document.getElementById("display").innerText = "0";
     }
-
 }
