@@ -1,4 +1,5 @@
-var input = []
+const operators = ['+','-','*','/'];
+var input = [];
 
 //basic operation functions
 function add(num1, num2){
@@ -31,21 +32,36 @@ function operate(op, num1, num2){
     }
     console.log(result);
 }
+function calculateResult(){
+    console.log("Calculating Result...");
+}
 
 //display updating and input capturing functions
 function addInput(val){
+    //for if user tries to input an operator after an operator
+    if(operators.includes(val)){
+        if(operators.includes(input.at(-1))){
+            return;
+        }
+        else if(input.at(-1) === '.'){
+            return;
+        }
+    }
+    //for if user tries to input an operator after a decimal point
+    if(val === '.'){
+        if(input.at(-1) === '.'){
+            return;
+        }
+    }
     input.push(val);
-    console.log(input);
     updateDisplay();
 }
 function deleteLast(){
     input.pop();
-    console.log(input);
     updateDisplay();
 }
 function clearInput(){
     input = [];
-    console.log(input);
     updateDisplay();
 }
 function updateDisplay(){
