@@ -47,10 +47,13 @@ function addInput(val){
             return;
         }
     }
-    //for if user tries to input an operator after a decimal point
+    //necessary checks for decimal point inputs
     if(val === '.'){
         if(input.at(-1) === '.'){
             return;
+        }
+        else if(operators.includes(input.at(-1))){
+            input.push(0);
         }
     }
     input.push(val);
