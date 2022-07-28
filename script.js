@@ -3,7 +3,7 @@ var input = [];
 
 //basic operation functions
 function add(num1, num2){
-    return num1 + num2;
+    return parseFloat(num1) + parseFloat(num2);
 }
 function subtract(num1, num2){
     return num1 - num2;
@@ -30,7 +30,7 @@ function operate(op, num1, num2){
     else if(op === "/"){
         result = divide(num1,num2);
     }
-    console.log(result);
+    return(result);
 }
 //called when 'Equals' button is pressed
 function calculateResult(){
@@ -40,6 +40,7 @@ function calculateResult(){
     var lastIndex = 0;
     for(var i = 0; i < input.length; i++){
         if(operators.includes(input[i])){
+            //slice and convert temp to single element in numbers
             let temp = input.slice(lastIndex, i);
             temp = temp.toString();
             temp = temp.replaceAll(',','');
@@ -51,13 +52,19 @@ function calculateResult(){
             lastIndex = i;
         }
     }
+    //slice and convert toMax to single element in numbers
     let toMax = input.slice(lastIndex, input.length+1);
     toMax = toMax.toString();
     toMax = toMax.replaceAll(',','');
     numbers.push(toMax);
 
-    console.log(numbers);
-    console.log(currentOps);
+    //loop through currentOps and send numbers in relation to j
+    var calcResult = numbers[0];
+    for(var j = 0; j < currentOps.length; j++){
+        calcResult = operate(currentOps[j], calcResult, numbers[j+1]);
+    }
+    calcResult = +calcResult.toFixed(2);
+    document.getElementById("result").innerText = calcResult;
 }
 
 //display updating and input capturing functions
@@ -104,6 +111,7 @@ function deleteLast(){
 function clearInput(){
     input = [];
     updateDisplay();
+    document.getElementById("result").innerText = "-";
 }
 function updateDisplay(){
     var toDisplay = input.toString();
