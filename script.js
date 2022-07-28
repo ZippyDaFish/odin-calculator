@@ -56,15 +56,30 @@ function calculateResult(){
     let toMax = input.slice(lastIndex, input.length+1);
     toMax = toMax.toString();
     toMax = toMax.replaceAll(',','');
-    numbers.push(toMax);
+    if(toMax != ""){
+        numbers.push(toMax);
+    }
 
     //loop through currentOps and send numbers in relation to j
     var calcResult = numbers[0];
     for(var j = 0; j < currentOps.length; j++){
         calcResult = operate(currentOps[j], calcResult, numbers[j+1]);
+        if(currentOps.length === numbers.length){
+            if(j === currentOps.length-2){
+                break;
+            }
+        }
     }
+    console.log(numbers);
+    console.log(currentOps);
     calcResult = +calcResult.toFixed(2);
     document.getElementById("result").innerText = calcResult;
+    input = [];
+    input.push(calcResult);
+    if(currentOps.length === numbers.length){   
+        input.push(currentOps.at(-1));
+    }
+    updateDisplay();
 }
 
 //display updating and input capturing functions
