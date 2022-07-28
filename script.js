@@ -35,7 +35,20 @@ function operate(op, num1, num2){
 //called when 'Equals' button is pressed
 function calculateResult(){
     console.log("Calculating Result...");
-    tempInput = input;
+    var numbers = [];
+    var currentOps = [];
+    for(var i = 0; i < input.length; i++){
+        if(!operators.includes(input[i])){
+            numbers.push(input[i]);
+            console.log("Nah");
+        }
+        if(operators.includes(input[i])){
+            currentOps.push(input[i]);
+            console.log("Ye");
+        }
+    }
+    console.log(numbers);
+    console.log(currentOps);
 }
 
 //display updating and input capturing functions
@@ -84,7 +97,7 @@ function clearInput(){
     updateDisplay();
 }
 function updateDisplay(){
-    toDisplay = input.toString();
+    var toDisplay = input.toString();
     toDisplay = toDisplay.replaceAll(',','');
     if(toDisplay){
         document.getElementById("display").innerText = toDisplay;
