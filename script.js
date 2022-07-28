@@ -32,9 +32,10 @@ function operate(op, num1, num2){
     }
     console.log(result);
 }
+//called when 'Equals' button is pressed
 function calculateResult(){
     console.log("Calculating Result...");
-    //TODO
+    tempInput = input;
 }
 
 //display updating and input capturing functions
@@ -47,13 +48,24 @@ function addInput(val){
         else if(input.at(-1) === '.'){
             return;
         }
+        else if(input.length <= 0){
+            return;
+        }
     }
     //necessary checks for decimal point inputs
     if(val === '.'){
         if(input.includes('.')){
-            return;
+            //checks if a '.' or an operator is most recent
+            for(var i = input.length-1; i >= 0; i--){
+                if(input[i] == '.'){
+                    return;
+                }
+                else if(operators.includes(input[i])){
+                    break;
+                }
+            }
         }
-        else if(operators.includes(input.at(-1))){
+        if(operators.includes(input.at(-1)) || input.length <= 0){
             input.push(0);
         }
     }
