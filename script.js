@@ -38,6 +38,7 @@ function calculateResult(){
     var numbers = [];
     var currentOps = [];
     var lastIndex = 0;
+    //convert input into numbers and operators
     for(var i = 0; i < input.length; i++){
         if(operators.includes(input[i])){
             //slice and convert temp to single element in numbers
@@ -51,6 +52,10 @@ function calculateResult(){
 
             lastIndex = i;
         }
+    }
+    //ensure there are operators to use
+    if(currentOps.length <= 0){
+        return;
     }
     //slice and convert toMax to single element in numbers
     let toMax = input.slice(lastIndex, input.length+1);
@@ -70,8 +75,7 @@ function calculateResult(){
             }
         }
     }
-    console.log(numbers);
-    console.log(currentOps);
+    //round result to 2 decimals and display
     calcResult = +calcResult.toFixed(2);
     document.getElementById("result").innerText = calcResult;
     input = [];

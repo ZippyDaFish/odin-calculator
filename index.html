@@ -9,36 +9,42 @@
     <title>Calculator</title>
 </head>
 <body>
-    <div id="calc-main">
-        <div id="calc-display">
-            <h2 id="display">0</h2>
-            <h2 id="result">-</h2>
-        </div>
-        <div id="settings">
-            <button id="clear-btn" class="settings-btn" onclick="clearInput()">Clear</button>
-            <button id="back-btn" class="settings-btn" onclick="deleteLast()">Del</button>
-        </div>
+    <div id="title">
+        <h1>Calculator</h1>
+        <h4>By ZippyDaFish</h4>
     </div>
-    <div id="calc-input">
-        <div id="num-buttons">
-            <button class="num-btn" onclick="addInput(7)">7</button>
-            <button class="num-btn" onclick="addInput(8)">8</button>
-            <button class="num-btn" onclick="addInput(9)">9</button>
-            <button class="num-btn" onclick="addInput(4)">4</button>
-            <button class="num-btn" onclick="addInput(5)">5</button>
-            <button class="num-btn" onclick="addInput(6)">6</button>
-            <button class="num-btn" onclick="addInput(1)">1</button>
-            <button class="num-btn" onclick="addInput(2)">2</button>
-            <button class="num-btn" onclick="addInput(3)">3</button>
-            <button id="float-btn" class="num-btn" onclick="addInput('.')">.</button>
-            <button class="num-btn" onclick="addInput(0)">0</button>
-            <button id="equals-btn" class="num-btn" onClick="calculateResult()">=</button>
+    <div id="content">
+        <div id="calc-main">
+            <div id="calc-display">
+                <h2 id="display">0</h2>
+                <h2 id="result">-</h2>
+            </div>
+            <div id="settings">
+                <button id="clear-btn" class="settings-btn" onclick="clearInput()">Clear</button>
+                <button id="back-btn" class="settings-btn" onclick="deleteLast()">Del</button>
+            </div>
         </div>
-        <div id="operator-buttons">
-            <button class="op-btn" onclick="addInput('/')">/</button>
-            <button class="op-btn" onclick="addInput('*')">X</button>
-            <button class="op-btn" onclick="addInput('-')">-</button>
-            <button class="op-btn" onclick="addInput('+')">+</button>
+        <div id="calc-input">
+            <div id="num-buttons">
+                <button class="num-btn" onclick="addInput(7)">7</button>
+                <button class="num-btn" onclick="addInput(8)">8</button>
+                <button class="num-btn" onclick="addInput(9)">9</button>
+                <button class="num-btn" onclick="addInput(4)">4</button>
+                <button class="num-btn" onclick="addInput(5)">5</button>
+                <button class="num-btn" onclick="addInput(6)">6</button>
+                <button class="num-btn" onclick="addInput(1)">1</button>
+                <button class="num-btn" onclick="addInput(2)">2</button>
+                <button class="num-btn" onclick="addInput(3)">3</button>
+                <button id="float-btn" class="num-btn" onclick="addInput('.')">.</button>
+                <button class="num-btn" onclick="addInput(0)">0</button>
+                <button id="equals-btn" class="num-btn" onClick="calculateResult()">=</button>
+            </div>
+            <div id="operator-buttons">
+                <button class="op-btn" onclick="addInput('/')">/</button>
+                <button class="op-btn" onclick="addInput('*')">X</button>
+                <button class="op-btn" onclick="addInput('-')">-</button>
+                <button class="op-btn" onclick="addInput('+')">+</button>
+            </div>
         </div>
     </div>
 </body>

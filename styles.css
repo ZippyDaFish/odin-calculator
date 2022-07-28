@@ -2,7 +2,16 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 10%;
+    background-color: darkgray;
+}
+
+#title{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#content{
+    box-shadow: 0 0 50px 5px white;
 }
 
 #calc-main{
