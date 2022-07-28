@@ -50,7 +50,7 @@ function addInput(val){
     }
     //necessary checks for decimal point inputs
     if(val === '.'){
-        if(input.at(-1) === '.'){
+        if(input.includes('.')){
             return;
         }
         else if(operators.includes(input.at(-1))){
