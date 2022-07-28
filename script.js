@@ -37,16 +37,25 @@ function calculateResult(){
     console.log("Calculating Result...");
     var numbers = [];
     var currentOps = [];
+    var lastIndex = 0;
     for(var i = 0; i < input.length; i++){
-        if(!operators.includes(input[i])){
-            numbers.push(input[i]);
-            console.log("Nah");
-        }
         if(operators.includes(input[i])){
+            let temp = input.slice(lastIndex, i);
+            temp = temp.toString();
+            temp = temp.replaceAll(',','');
+            numbers.push(temp);
+
             currentOps.push(input[i]);
-            console.log("Ye");
+            input.splice(i, 1);
+
+            lastIndex = i;
         }
     }
+    let toMax = input.slice(lastIndex, input.length+1);
+    toMax = toMax.toString();
+    toMax = toMax.replaceAll(',','');
+    numbers.push(toMax);
+
     console.log(numbers);
     console.log(currentOps);
 }
